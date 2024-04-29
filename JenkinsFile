@@ -1,0 +1,22 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                // Your build commands here
+                sh 'your_build_command'
+            }
+        }
+        stage('Pack') {
+            when {
+                // Trigger 'Pack' stage only if branch is 'develop' or 'master'
+                branch 'develop'
+                branch 'master'
+            }
+            steps {
+                echo 'pack...'
+            }
+        }
+    }
+}
