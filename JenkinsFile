@@ -5,7 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 // Your build commands here
-                sh 'your_build_command'
+                echo 'build'
             }
         }
         stage('Pack') {
